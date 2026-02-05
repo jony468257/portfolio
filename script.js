@@ -35,21 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.md:hidden button');
-    const navLinks = document.querySelector('.md:block');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
     
-    if (mobileMenuBtn && navLinks) {
+    if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
-            // Clone links for mobile if not already present or just toggle a class
-            // For simplicity, we'll just toggle a simple mobile drawer simulation
-            const isMenuOpen = navLinks.classList.contains('hidden');
-            if (isMenuOpen) {
-                navLinks.classList.remove('hidden');
-                navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-20', 'left-0', 'w-full', 'bg-dark', 'p-6', 'border-b', 'border-white/10');
-            } else {
-                navLinks.classList.add('hidden');
-                navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-20', 'left-0', 'w-full', 'bg-dark', 'p-6', 'border-b', 'border-white/10');
-            }
+            mobileMenu.classList.toggle('hidden');
         });
     }
 
